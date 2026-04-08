@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 """
-    Adds two float numbers and returns the result.
+Module that provides a simple addition function for two float numbers.
 """
+
 
 def add(a: float, b: float) -> float:
     """
-    Return the sum of two float numbers.
+    Add two float numbers and return the result.
+
+    Args:
+        a (float): The first number.
+        b (float): The second number.
+
+    Returns:
+        float: The sum of a and b.
     """
     return a + b
