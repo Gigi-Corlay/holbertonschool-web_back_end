@@ -1,39 +1,39 @@
-# 📘 0-async_generator
+# 📘 Python - Async Comprehension
 
 ## 📌 Description
 
-Ce module implémente un **générateur asynchrone** en Python.  
-Il permet de produire une séquence de valeurs de manière **asynchrone**, en utilisant les mots-clés `async` et `await`.
+This module implements an asynchronous generator in Python.
+It allows producing a sequence of values asynchronously, using the `async and `await` keywords.
 
 ---
 
-## 🎯 Objectif
+## 🎯 Objective
 
-L’objectif est de comprendre :
+The goal is to understand:
 
-- Les **fonctions asynchrones** (`async def`)
-- L’utilisation de `await`
-- Le concept de **générateur asynchrone** (`yield` dans une fonction async)
-- La gestion du temps avec `asyncio`
+- **Asynchronous functions** (`async def`)
+- The use of `await`
+- The concept of an **asynchronous generator* (`yield` in an async function)
+- Time management with `asyncio`
 
 ---
 
-## ⚙️ Fonctionnalité
+## ⚙️ Functionality
 
-Le fichier contient une fonction :
+The file contains a function:
 
 ```python
 async def async_generator():
 ```
-**Cette fonction :**
-- Attend 1 seconde à chaque itération (`await asyncio.sleep(1)`)
-- Génère un nombre aléatoire
-- Répète cela 10 fois
-- Utilise `yield` pour retourner chaque valeur
+**This function:**
+- Waits 1 second on each iteration (`await asyncio.sleep(1)`)
+- Generates a random number
+- Repeats this 10 times
+- Uses `yield` to return each value
 
-## 🧠 Concepts clés
-**🔹 Fonction asynchrone*
-Une fonction définie avec async def permet d’exécuter du code de manière non bloquante.
+## 🧠 Key Concepts
+**🔹 Asynchronous Function**
+A function defined with async def allows code to run non-blocking.
 
 ```python
 async def my_function():
@@ -41,21 +41,21 @@ async def my_function():
 ```
 
 ### 🔹 await
-Le mot-clé await permet d’attendre le résultat d’une opération asynchrone sans bloquer le programme.
+The await keyword lets you wait for an asynchronous operation without blocking the program.
 
-### 🔹 Générateur asynchrone
+### 🔹 Asynchronous Generator
 
-Un générateur asynchrone est une fonction qui utilise :
+An asynchronous generator is a function that uses:
 ```python
 async def
 yield
 ```
-👉 Cela permet de produire des valeurs une par une dans un contexte asynchrone.
+👉 This allows producing values one by one in an asynchronous context.
 
 ### 🔹 asyncio
-Le module asyncio permet de gérer les tâches asynchrones en Python.
+The asyncio module allows managing asynchronous tasks in Python.
 
-**Exemple :**
+**Example :**
 
 import asyncio
 await asyncio.sleep(1)
@@ -71,20 +71,20 @@ asyncio.run(main())
 
 ---
 
-## 📈 Comportement
-Le programme affiche un nombre aléatoire toutes les secondes
-Il s’exécute sans bloquer les autres tâches asynchrones
+## 📈 Behavior
+The program prints a random number every second
+It runs without blocking other asynchronous tasks
 
 ---
 
 ## 🧩 Cas d’usage
-**Les générateurs asynchrones sont utiles pour :**
-- Lire des données en streaming
-- Traiter des API progressivement
-- Gérer de gros volumes de données sans tout charger en mémoire
+**Asynchronous generators are useful for:**
+- Reading data streams
+- Processing APIs incrementally
+- Handling large volumes of data without loading everything into memory
 
 ---
 
-## 📚 Ressources
-- Documentation officielle Python : asyncio
+## 📚 Resources
+- DOfficial Python documentation: asyncio
 - PEP 525 – Asynchronous Generators
