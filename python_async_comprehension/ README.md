@@ -77,7 +77,7 @@ It runs without blocking other asynchronous tasks
 
 ---
 
-## 🧩 Cas d’usage
+## 🧩 Use Cases
 **Asynchronous generators are useful for:**
 - Reading data streams
 - Processing APIs incrementally
