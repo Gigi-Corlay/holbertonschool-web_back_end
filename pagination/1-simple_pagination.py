@@ -4,7 +4,7 @@ import csv
 from typing import List, Tuple
 
 
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
+def index_range(page: int, page_size: int) -> tuple[int, int]:
     """
     Returns a tuple of start and end indexes for pagination.
     """
@@ -19,7 +19,7 @@ class Server:
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
@@ -27,14 +27,14 @@ class Server:
         Cached dataset
         """
         if self.__dataset is None:
-            with open(self.DATA_FILE) as f:
-                reader = csv.reader(f)
+            with open(self.DATA_FILE) as file:
+                reader = csv.reader(file)
                 dataset = list(reader)
             self.__dataset = dataset[1:]
 
         return self.__dataset
 
-    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+    def get_page(self, page: int = 1, page_size: int = 10) -> List[List[str]]:
         """
         Returns a page of the dataset based on page number and page size.
         """
@@ -43,5 +43,8 @@ class Server:
 
         start, end = index_range(page, page_size)
         data = self.dataset()
+
+        if start >= len(dataset):
+            return []
 
         return data[start:end]
