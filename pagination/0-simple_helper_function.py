@@ -3,8 +3,6 @@
 Module that provides a helper function for pagination.
 """
 
-from typing import Tuple
-
 
 def index_range(page: int, page_size: int) -> tuple[int, int]:
     """
