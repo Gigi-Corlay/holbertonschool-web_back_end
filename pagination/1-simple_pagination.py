@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-
+"""
+Pagination module for server dataset.
+"""
 import csv
-from typing import List, Tuple
+import math
+from typing import List
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -24,7 +27,7 @@ class Server:
 
     def dataset(self) -> List[List]:
         """
-        Cached dataset
+        Return the cached dataset, loading it from the CSV file if necessary.
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -35,16 +38,17 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """
-        Returns a page of the dataset based on page number and page size.
-        """
-        assert isinstance(page, int) and page > 0
-        assert isinstance(page_size, int) and page_size > 0
+    """
+    Return a specific page of the dataset based on page number and page size.
+    If the page or page_size is out of range, an empty list is returned.
+    """
+    assert isinstance(page, int) and page > 0
+    assert isinstance(page_size, int) and page_size > 0
 
-        start, end = index_range(page, page_size)
-        data = self.dataset()
+    start, end = index_range(page, page_size)
+    data = self.dataset()
 
-        if start >= len(data):
-            return []
+    if start >= len(data):
+        return []
 
-        return data[start:end]
+    return data[start:end]
