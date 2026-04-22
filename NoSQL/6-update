@@ -1,4 +1,4 @@
-// A new attribute to a documents with name="Holberton school
+// A new attribute to a documents with name="Holberton school"
 db.school.update(
   { name: "Holberton school" },
   { $set: { address: "972 Mission street" } },
