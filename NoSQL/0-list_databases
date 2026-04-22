@@ -1,3 +1,2 @@
-db.adminCommand('listDatabases').databases.forEach(function(d) {
-    print(d.name);
-});
+// lists all databases
+show dbs
