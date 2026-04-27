@@ -4,9 +4,20 @@ module.exports = {
       node: true,
       jest: true,
     },
+    extends: 'airbnb-base',
     parserOptions: {
-      sourceType: 'module'
+      ecmaVersion: 2018,
+      sourceType: 'module',
     },
-    extends: 'eslint:recommended',
-    rules: {},
+    plugins: ['jest'],
+    rules: {
+      'no-console': 'off',
+      'no-shadow': 'off',
+      'no-restricted-syntax': [
+        'error',
+        'LabeledStatement',
+        'WithStatement',
+      ],
+    },
   };
+  
