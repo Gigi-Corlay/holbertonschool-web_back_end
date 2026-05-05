@@ -1,12 +1,15 @@
 export default function cleanSet(set, startString) {
-    if (startString === '') {
+    if (typeof startString !== 'string' || startString === '') {
         return '';
     }
-    const tables = [];
+
+    const result = [];
+
     for (const value of set) {
-        if (typeof value === "string" && value.startsWith(startString)) {
-            tables.push(value.slice(startString.length));
+        if (typeof value === 'string' && value.startsWith(startString)) {
+            result.push(value.slice(startString.length));
         }
     }
-    return tables.join('-');
+
+    return result.join('-');
 }
