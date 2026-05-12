@@ -31,10 +31,10 @@ function countStudents(path) {
 
   console.log(`Number of students: ${total}`);
 
-  for (const field in fields) {
+  for (const field of Object.keys(fields)) {
     const list = fields[field];
     console.log(
-      `Number of students in ${field}: ${list.length}. List: ${list.join(', ')}`
+      `Number of students in ${field}: ${list.length}. List: ${list.join(', ')}`,
     );
   }
 }
