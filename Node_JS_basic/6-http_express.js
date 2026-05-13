@@ -5,8 +5,6 @@ app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
-if (require.main === module) {
-  app.listen(1245);
-}
+app.listen(1245, '0.0.0.0');
 
 module.exports = app;
