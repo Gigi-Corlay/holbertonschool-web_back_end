@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
     "check-lint": "./node_modules/.bin/eslint [0-9]*.js",
-    "test": "echo \"No local tests\"",
-    "full-test": "npm run lint"
+    "test": "jest",
+    "full-test": "npm run lint && npm run test"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest": "^22.21.0",
+    "jest": "^30.4.2",
     "lint": "*",
     "mocha": "^6.2.3",
     "nodemon": "^2.0.22",
